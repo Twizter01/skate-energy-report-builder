@@ -52,6 +52,12 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				energy: {
+					kinetic: 'hsl(var(--energy-kinetic))',
+					potential: 'hsl(var(--energy-potential))',
+					thermal: 'hsl(var(--energy-thermal))',
+					total: 'hsl(var(--energy-total))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -68,7 +74,24 @@ export default {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)'
 			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-surface': 'var(--gradient-surface)',
+				'gradient-energy': 'var(--gradient-energy)'
+			},
 			keyframes: {
+				'slide-down': {
+					from: { height: '0', opacity: '0' },
+					to: { height: 'var(--radix-accordion-content-height)', opacity: '1' }
+				},
+				'slide-up': {
+					from: { height: 'var(--radix-accordion-content-height)', opacity: '1' },
+					to: { height: '0', opacity: '0' }
+				},
+				'bounce-ball': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-20px)' }
+				},
 				'accordion-down': {
 					from: {
 						height: '0'
@@ -88,7 +111,10 @@ export default {
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'slide-down': 'slide-down 0.3s ease-out',
+				'slide-up': 'slide-up 0.3s ease-out',
+				'bounce-ball': 'bounce-ball 2s ease-in-out infinite'
 			}
 		}
 	},
